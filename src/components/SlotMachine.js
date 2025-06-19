@@ -243,7 +243,7 @@ const SlotMachine = ({ contractAddress }) => {
       {/* Automaty */}
       <div className="reels-container">
         <div className="reels">
-          {reels.map((symbol, index) => (
+          {(reels || []).map((symbol, index) => (
             <motion.div
               key={index}
               className={`reel ${isSpinning ? 'spinning' : ''}`}
@@ -267,7 +267,7 @@ const SlotMachine = ({ contractAddress }) => {
       <div className="payout-table">
         <h3>💰 Tabela wypłat</h3>
         <div className="payouts">
-          {Object.entries(PAYOUTS).map(([symbols, multiplier]) => (
+          {Object.entries(PAYOUTS || {}).map(([symbols, multiplier]) => (
             <div key={symbols} className="payout-row">
               <span className="symbols">{symbols}</span>
               <span className="multiplier">{multiplier}x</span>
