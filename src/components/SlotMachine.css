@@ -218,48 +218,19 @@
 /* Popup wyniku */
 .result-popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 10vh;
+  left: 5vw;
+  right: 5vw;
   background: white;
   color: #1f2937;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 1000;
-  width: 90vw;
-  max-width: 350px;
-  max-height: 80vh;
+  max-height: 70vh;
   overflow-y: auto;
-}
-
-/* Mobile specific fix */
-@media (max-height: 600px) {
-  .result-popup {
-    padding: 15px;
-    max-height: 70vh;
-    font-size: 0.9em;
-  }
-  
-  .result-popup h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .result-popup .win-symbols,
-  .result-popup .lose-symbols {
-    font-size: 2em;
-    margin: 10px 0;
-  }
-}
-
-/* Telegram specific adjustments */
-@media (max-width: 400px) {
-  .result-popup {
-    width: 95vw;
-    padding: 15px;
-  }
+  transform: none;
 }
 
 .result-popup::before {
@@ -271,6 +242,56 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: -1;
+}
+
+.result-popup h2 {
+  font-size: 1.3em;
+  margin: 0 0 10px 0;
+}
+
+.result-popup .win-symbols,
+.result-popup .lose-symbols {
+  font-size: 1.8em;
+  margin: 8px 0;
+}
+
+.result-popup .win-amount,
+.result-popup .lose-amount {
+  font-size: 1.1em;
+  margin: 8px 0;
+}
+
+.result-popup .close-result {
+  margin-top: 15px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #3b82f6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* Bardzo małe ekrany */
+@media (max-height: 500px) {
+  .result-popup {
+    top: 5vh;
+    max-height: 85vh;
+    padding: 10px;
+    font-size: 0.85em;
+  }
+  
+  .result-popup h2 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+  }
+  
+  .result-popup .win-symbols,
+  .result-popup .lose-symbols {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
 }
 
 .win-result h2 {
