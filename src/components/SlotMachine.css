@@ -223,13 +223,43 @@
   transform: translate(-50%, -50%);
   background: white;
   color: #1f2937;
-  padding: 30px;
-  border-radius: 20px;
+  padding: 20px;
+  border-radius: 15px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 1000;
-  min-width: 300px;
-  max-width: 90vw;
+  width: 90vw;
+  max-width: 350px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Mobile specific fix */
+@media (max-height: 600px) {
+  .result-popup {
+    padding: 15px;
+    max-height: 70vh;
+    font-size: 0.9em;
+  }
+  
+  .result-popup h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .result-popup .win-symbols,
+  .result-popup .lose-symbols {
+    font-size: 2em;
+    margin: 10px 0;
+  }
+}
+
+/* Telegram specific adjustments */
+@media (max-width: 400px) {
+  .result-popup {
+    width: 95vw;
+    padding: 15px;
+  }
 }
 
 .result-popup::before {
