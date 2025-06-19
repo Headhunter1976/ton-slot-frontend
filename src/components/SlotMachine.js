@@ -243,24 +243,24 @@ const SlotMachine = ({ contractAddress }) => {
       {/* Automaty */}
       <div className="reels-container">
         <div className="reels">
-          {(reels || []).map((symbol, index) => (
-            <motion.div
-              key={index}
-              className={`reel ${isSpinning ? 'spinning' : ''}`}
-              animate={isSpinning ? { 
-                rotateX: [0, 360],
-                scale: [1, 1.1, 1]
-              } : {}}
-              transition={{ 
-                duration: 0.3,
-                repeat: isSpinning ? Infinity : 0,
-                delay: index * 0.1
-              }}
-            >
-              {symbol}
-            </motion.div>
-          ))}
-        </div>
+  {(reels || ['🍒', '🍒', '🍒']).map((symbol, index) => (
+    <motion.div
+      key={index}
+      className={`reel ${isSpinning ? 'spinning' : ''}`}
+      animate={isSpinning ? { 
+        rotateX: [0, 360],
+        scale: [1, 1.1, 1]
+      } : {}}
+      transition={{ 
+        duration: 0.3,
+        repeat: isSpinning ? Infinity : 0,
+        delay: index * 0.1
+      }}
+    >
+      {symbol}
+    </motion.div>
+  ))}
+</div>
       </div>
 
       {/* Tabela wypłat */}
