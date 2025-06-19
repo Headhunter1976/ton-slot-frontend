@@ -1,7 +1,7 @@
 {
-  "url": "https://ton-slot-machine.vercel.app",
+  "url": "https://ton-slot-frontend.vercel.app",
   "name": "TON Slot Machine",
-  "iconUrl": "https://ton-slot-machine.vercel.app/icon-192x192.png",
-  "termsOfUseUrl": "https://ton-slot-machine.vercel.app/terms.html",
-  "privacyPolicyUrl": "https://ton-slot-machine.vercel.app/privacy.html"
+  "iconUrl": "https://ton-slot-frontend.vercel.app/icon-192x192.png",
+  "termsOfUseUrl": "https://ton-slot-frontend.vercel.app/terms.html",
+  "privacyPolicyUrl": "https://ton-slot-frontend.vercel.app/privacy.html"
 }
