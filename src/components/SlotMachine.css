@@ -400,3 +400,508 @@
     margin: 10px;
   }
 }
+
+/* Dodatkowe style dla OffChain SlotMachine */
+/* Dodaj te style do istniejącego SlotMachine.css */
+
+/* Sekcja balansów */
+.balance-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 2px solid #ffd700;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.balance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #ffd700;
+}
+
+.balance-label {
+  font-size: 1rem;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.balance-value {
+  font-size: 1.2rem;
+  color: #ffd700;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Statystyki sesji */
+.stats-section {
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  border: 2px solid #00d4ff;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2);
+}
+
+.stats-section h3 {
+  color: #00d4ff;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(0, 212, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  color: #00d4ff;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+}
+
+/* Kontrole zarządzania balansem */
+.balance-controls {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.deposit-button, .withdraw-button {
+  flex: 1;
+  max-width: 140px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.deposit-button {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.deposit-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+}
+
+.withdraw-button {
+  background: linear-gradient(135deg, #fd7e14 0%, #e55a00 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(253, 126, 20, 0.4);
+}
+
+.withdraw-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e55a00 0%, #dc3545 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(253, 126, 20, 0.6);
+}
+
+.deposit-button:disabled, .withdraw-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.modal {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 2px solid #ffd700;
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal h3 {
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.modal p {
+  color: #e0e0e0;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.modal input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.modal input:focus {
+  outline: none;
+  border-color: #00d4ff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-buttons button:first-child {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.modal-buttons button:first-child:hover:not(:disabled) {
+  background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+  transform: translateY(-2px);
+}
+
+.modal-buttons button:last-child {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  color: white;
+}
+
+.modal-buttons button:last-child:hover {
+  background: linear-gradient(135deg, #5a6268 0%, #343a40 100%);
+  transform: translateY(-2px);
+}
+
+.modal-buttons button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* App header styles */
+.app-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-bottom: 2px solid #ffd700;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  color: #ffd700;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  font-family: 'Arial Black', sans-serif;
+}
+
+.app-subtitle {
+  font-size: 1.2rem;
+  color: #00d4ff;
+  margin: 10px 0 0 0;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* App footer styles */
+.app-footer {
+  background: linear-gradient(135deg, #0f1419 0%, #1a1a2e 100%);
+  border-top: 2px solid #ffd700;
+  padding: 30px 0;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-text {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  margin: 20px 0;
+}
+
+.footer-link {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border: 1px solid #00d4ff;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  background: #00d4ff;
+  color: #1a1a2e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+.footer-disclaimer {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* Telegram specific styles */
+.telegram-info {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.telegram-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 212, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+  font-size: 0.8rem;
+  backdrop-filter: blur(10px);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background: #00ff00;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+}
+
+.loading-spinner {
+  text-align: center;
+  color: white;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ffd700;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .balance-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .deposit-button, .withdraw-button {
+    max-width: 200px;
+    width: 100%;
+  }
+  
+  .modal {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
+  }
+  
+  .app-title {
+    font-size: 2rem;
+  }
+  
+  .app-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Enhanced animations */
+@keyframes winPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.balance-value.win-animation {
+  animation: winPulse 0.5s ease-in-out 3;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .status-indicator {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .balance-item,
+  .stat-item,
+  .modal {
+    border-width: 3px;
+  }
+  
+  .balance-value,
+  .stat-value {
+    text-shadow: none;
+    font-weight: 900;
+  }
+}
+
+/* NOWE STYLE DLA OFF-CHAIN GAMING */
+.stat-value.profit {
+  color: #00ff00 !important;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.stat-value.loss {
+  color: #ff6b6b !important;
+  text-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+}
+
+.spin-button.spinning {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  animation: spinButtonPulse 1s ease-in-out infinite;
+}
+
+@keyframes spinButtonPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
